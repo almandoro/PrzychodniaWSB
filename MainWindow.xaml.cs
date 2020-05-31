@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrzychodniaWSB.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,12 +15,19 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PrzychodniaWSB {
-    /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+            DataContext = new LoginViewModel();
         }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e) {
+            Application.Current.Shutdown();
+        }
+        
     }
 }
