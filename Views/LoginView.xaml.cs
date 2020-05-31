@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrzychodniaWSB.ClinicCore.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,10 @@ namespace PrzychodniaWSB.Views {
     public partial class Login : UserControl {
         public Login() {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            DbTest.LoadPeople();
         }
     }
 }

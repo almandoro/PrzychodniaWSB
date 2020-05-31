@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PrzychodniaWSB.Core.Entity {
-    class Doctor : AbstractPerson {
+    public class Doctor : AbstractPerson {
 
         private string specialization;
 

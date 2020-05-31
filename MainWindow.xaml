@@ -34,21 +34,19 @@
                 <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="Auto" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="ExitButton_Click">
                     <Button.Effect>
                         <DropShadowEffect BlurRadius="10" Opacity="1">
-                           
+
                         </DropShadowEffect>
                     </Button.Effect>
                     <materialDesign:PackIcon Kind="Power"/>
                 </Button>
             </StackPanel>
         </Grid>
-
-
-        <Grid x:Name="MainScreen" VerticalAlignment="Stretch" Margin="0,40,0,0">
+        <Grid x:Name="MainScreen" VerticalAlignment="Stretch" Margin="0,40,0,26">
             <ContentControl Content="{Binding}"/>
         </Grid>
         <Grid x:Name = "Bottom" VerticalAlignment="Bottom" Height="26">
 
-            <Button IsEnabled="False" Height="Auto" Margin="0,0,0,0">Dół</Button>
+            <Button IsEnabled="False" Height="Auto" Margin="0,0,0,0">Stopka Do zrobienia</Button>
         </Grid>
 
 
