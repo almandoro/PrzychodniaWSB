@@ -16,5 +16,14 @@ CREATE TABLE [clinic] (
 , CONSTRAINT [PK_clinic] PRIMARY KEY ([clinic_id])
 );
 
+-- Script Date: 01.06.2020 19:01  - ErikEJ.SqlCeScripting version 3.5.2.86
+CREATE TABLE [users] (
+  [user_id] INTEGER NOT NULL
+, [login] TEXT NOT NULL
+, [password] TEXT NOT NULL
+, [email] TEXT NULL
+, [role] INTEGER NULL
+, CONSTRAINT [PK_users] PRIMARY KEY ([user_id])
+);
 
 

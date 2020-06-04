@@ -18,7 +18,7 @@ namespace PrzychodniaWSB {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
-            DataContext = new LoginViewModel();
+            this.DataContext = new WindowViewModel(this);
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e) {

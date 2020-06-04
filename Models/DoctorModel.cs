@@ -13,6 +13,11 @@ namespace PrzychodniaWSB.Models {
         public string lastName { get; set; }
         public string specialization { get; set; }
 
+        public UserRole userRole = UserRole.Doctor;
+
+        public DoctorModel() {
+        }
+
         public override string ToString() {
             return $"Doctor id {doctor_id} clinic_id {clinic_id} name {name} lastname {lastName} specialization {specialization}";
         }

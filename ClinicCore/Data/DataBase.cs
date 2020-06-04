@@ -10,13 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PrzychodniaWSB.ClinicCore.Data {
-    public class DbTest {
+    public class DataBase {
 
-        private static String conStr = "Data Source=C:\\Users\\Maciek\\Desktop\\Przychodnia\\PrzychodniaWSB\\clinic.db";
-
+        private static string cStr = AppSettings.connectionString;
         public static List<DoctorModel> LoadPeople() {
-            using (IDbConnection cnn = new SQLiteConnection(conStr)) {
-                var output = cnn.Query<DoctorModel>("select * from doctors", new DynamicParameters());
+            using (IDbConnection cnn = new SQLiteConnection(cStr)) {
+                var output = cnn.Query<DoctorModel>("select name from doctors", new DynamicParameters());
                 foreach(var item in output) {
                     Console.WriteLine(item.ToString());
                 }
