@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using PrzychodniaWSB.ClinicCore;
 using PrzychodniaWSB.Utils;
+using PrzychodniaWSB.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PrzychodniaWSB {
-    public class LoginViewModel {
+    public class LoginViewModel : ViewModel{
 
         public LoginViewModel() {
 

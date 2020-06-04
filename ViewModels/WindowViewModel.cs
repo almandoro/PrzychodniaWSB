@@ -1,4 +1,5 @@
-﻿using PrzychodniaWSB.ViewModels;
+﻿using PrzychodniaWSB.Utils;
+using PrzychodniaWSB.ViewModels;
 using PrzychodniaWSB.ViewModels.Parents;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,13 @@ using System.Windows;
 namespace PrzychodniaWSB{
     public class WindowViewModel : ViewModel {
 
+        private static WindowViewModel instance;
+
+        public static WindowViewModel Instance {
+            get { return instance; }
+        }
+
+
         /// <summary>
         /// Aktualnie wyswietlany widok w glownym oknie
         /// </summary>
@@ -20,7 +28,8 @@ namespace PrzychodniaWSB{
 
         public WindowViewModel(Window window) {
             this.window = window;
-
+            instance = this;
+            Logger.debug($"WindowViewModel instance: {instance}");
         }
 
         #region Properties
@@ -37,7 +46,6 @@ namespace PrzychodniaWSB{
         #endregion
         public void SwitchView(ViewPage page, ViewModel viewModel = null) {
             
-            // Set the view model
             CurrentPageViewModel = viewModel;
 
             var different = CurrentPage != page;

@@ -56,6 +56,6 @@
     </Window.Resources>
 
     <Grid Background="FloralWhite">
-        <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ViewPageConverter}}"/>
+        <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ViewPageConverter}}" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

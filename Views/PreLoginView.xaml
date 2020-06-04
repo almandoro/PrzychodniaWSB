@@ -18,12 +18,12 @@
 
                 <!-- Login main content white box -->
                 <Border Background="SeaGreen" 
-                            CornerRadius="10"
+                            CornerRadius="20"
                             Padding="15 50 15 15"
                             Width="330"
                             Margin="50 50 50 0">
 
-                    <StackPanel>
+                    <StackPanel x:Name="UserRoleContainer">
                         
                         <TextBlock Text="Jako kto się logujesz?" 
                                    FontSize="24" 
@@ -37,35 +37,34 @@
                             <TextBlock FontSize="18" Text="Admin"></TextBlock>
                             </Border>
                             <Border Padding="25">
-                                <TextBlock FontSize="18" Text="Admin"></TextBlock>
+                                <TextBlock FontSize="18" Text="Doktor"></TextBlock>
                             </Border>
                             <Border Padding="25">
-                                <TextBlock FontSize="18" Text="Admin"></TextBlock>
+                                <TextBlock FontSize="18" Text="Pacjent"></TextBlock>
                             </Border>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
                             <Border Padding="20">
-                                <RadioButton x:Name="Admin" Padding="10">
+                                <RadioButton GroupName="UserRole" x:Name="Admin" Padding="10">
                                 <materialDesign:PackIcon  Kind="Terminal" Width="Auto" Height="Auto" HorizontalAlignment="Left"/>
                             </RadioButton>
                         </Border>
                         
                         <Border Padding="20">
-                            <RadioButton x:Name="Doctor" >
+                            <RadioButton GroupName="UserRole" x:Name="Doctor" >
                                 <materialDesign:PackIcon  Kind="Doctor" Width="Auto" Height="Auto" HorizontalAlignment="Left"/>
                             </RadioButton>
                         </Border>
 
                         <Border Padding="20">
-                            <RadioButton x:Name="Patient">
+                                <RadioButton GroupName="UserRole" IsChecked="True" x:Name="Patient">
                                 <materialDesign:PackIcon  Kind="User" Width="Auto" Height="Auto" HorizontalAlignment="Left"/>
                             </RadioButton>
                         </Border>
 
                         </StackPanel>
 
-                        <Button Content="Login" 
-                                    HorizontalAlignment="Center" />
+                        <Button Content="Dalej" HorizontalAlignment="Center" Click="Continue_Click" />
 
                     </StackPanel>
 

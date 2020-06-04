@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PrzychodniaWSB.Utils;
+using PrzychodniaWSB.ViewModels.Parents;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +22,13 @@ namespace PrzychodniaWSB.Views {
     public partial class PreLoginView : Page {
         public PreLoginView() {
             InitializeComponent();
+        }
+
+        private void Continue_Click(object sender, RoutedEventArgs e) {
+            var x = WindowViewModel.Instance.Equals(null);
+            Logger.debug($"x");
+
+            WindowViewModel.Instance.SwitchView(ViewPage.Login, new LoginViewModel());
         }
     }
 }
