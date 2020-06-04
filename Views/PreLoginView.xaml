@@ -17,7 +17,7 @@
                     TextBlock.TextAlignment="Center">
 
                 <!-- Login main content white box -->
-                <Border Background="SeaGreen" 
+                <Border Background="CadetBlue" 
                             CornerRadius="20"
                             Padding="15 50 15 15"
                             Width="330"

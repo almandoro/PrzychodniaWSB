@@ -9,31 +9,31 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LoginView">
 
-    
+
     <Grid>
-        <Border Background="SeaGreen" 
-                            CornerRadius="10"
+        <Border Background="CadetBlue" 
+                            CornerRadius="20"
                             Padding="15 50 15 15"
                             Width="330"
                             Margin="235,130,235,127">
-            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" >
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="User" Width="Auto" Height="Auto" VerticalAlignment="Center"/>
-                <TextBox x:Name="LoginTextBox" Height="25" Width="122"/>
+            <StackPanel Orientation="Vertical" Margin="35,-17,35,-5" >
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="41" Margin="39,0">
+                    <materialDesign:PackIcon Kind="User" Width="30" Height="30" VerticalAlignment="Center"/>
+                    <TextBox x:Name="LoginTextBox"  FontSize="16" Width="129" Margin="0,8,0,0"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Key" Width="30" Height="30" VerticalAlignment="Center"/>
+                    <TextBox x:Name="PasswordTextBox" FontSize="16" Width="129" Margin="0,8,0,0"/>
+                </StackPanel>
+                <Border VerticalAlignment="Bottom" Padding="15" Height="87">
+                    <Button VerticalAlignment="Bottom" x:Name="LoginButton" Click="Button_Click" Width="200" Height="45">
+                        <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" >
+                            <materialDesign:PackIcon Kind="LoginVariant" Width="Auto" Height="Auto" HorizontalAlignment="Left"/>
+                            <TextBlock Text="Logowanie" VerticalAlignment="Top" FontSize="25" Padding="3" Width="143"/>
+                        </StackPanel>
+                    </Button>
+                </Border>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <materialDesign:PackIcon Kind="Key" Width="Auto" Height="Auto" VerticalAlignment="Center"/>
-                <TextBox x:Name="PasswordTextBox" Height="25" Width="122"/>
-            </StackPanel>
-            <Border Padding="5">
-                <Button x:Name="LoginButton" Click="Button_Click" Width="200" Height="45">
-                    <StackPanel Orientation="Horizontal" >
-                        <materialDesign:PackIcon Kind="LoginVariant" Width="Auto" Height="Auto" HorizontalAlignment="Left"/>
-                        <TextBlock Text="Logowanie" VerticalAlignment="Top" FontSize="25" Padding="3" Width="143"/>
-                    </StackPanel>
-                </Button>
-            </Border>
-        </StackPanel>
         </Border>
     </Grid>
 </Page>
