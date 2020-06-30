@@ -8,68 +8,44 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PreLoginView">
+    <Grid x:Name="PreLoginGrid" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Image Grid.Column="1" Grid.RowSpan="2" Source="wybor_konta.png" OpacityMask="{x:Null}"/>
+        <Grid x:Name="PreLoginImageGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="41*"/>
+                <ColumnDefinition Width="54*"/>
+                <ColumnDefinition Width="27*"/>
+                <ColumnDefinition Width="54*"/>
+                <ColumnDefinition Width="22*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="55*"/>
+                <ColumnDefinition Width="26*"/>
+                <ColumnDefinition Width="54*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="17*"/>
+                <ColumnDefinition Width="59*"/>
+                <ColumnDefinition Width="28*"/>
+                <ColumnDefinition Width="52*"/>
+                <ColumnDefinition Width="42*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="141*"/>
+                <RowDefinition Height="178*"/>
+                <RowDefinition Height="26*"/>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="36*"/>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="24*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="AdminButton" Grid.Column="1" Grid.Row="1" Background="#00000000" Height="Auto" BorderBrush="Transparent" Grid.RowSpan="3" Grid.ColumnSpan="3" />
+            <Ellipse x:Name="AdminSelected" Grid.Column="2" Grid.Row="2" Fill="Transparent"></Ellipse>
 
-    <Border>
-        <Grid>
-            <StackPanel 
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                    TextBlock.TextAlignment="Center">
+            <Button x:Name="DoctorButton" Grid.Column="6" Grid.Row="1" Background="#00000000" Height="Auto" BorderBrush="Transparent" Grid.RowSpan="3" Grid.ColumnSpan="3" />
+            <Ellipse x:Name="DoctorSelected" Grid.Column="7" Grid.Row="2" Fill="Transparent"></Ellipse>
 
-                <!-- Login main content white box -->
-                <Border Background="CadetBlue" 
-                            CornerRadius="20"
-                            Padding="15 50 15 15"
-                            Width="330"
-                            Margin="50 50 50 0">
+            <Button x:Name="PatientButton" Grid.Column="11" Grid.Row="1" Background="#00000000" Height="Auto" BorderBrush="#FF6532C1" Grid.RowSpan="3" Grid.ColumnSpan="3" />
+            <Ellipse x:Name="PatientSelected" Grid.Column="12" Grid.Row="2" Fill="#FF0145C2"></Ellipse>
 
-                    <StackPanel x:Name="UserRoleContainer">
-                        
-                        <TextBlock Text="Jako kto się logujesz?" 
-                                   FontSize="24" 
-                                   Foreground="AliceBlue" >
-                            <TextBlock.Effect>
-                                <DropShadowEffect BlurRadius="1" Opacity="10" ShadowDepth="2"/>
-                            </TextBlock.Effect>
-                        </TextBlock>
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center"> 
-                            <Border Padding="25">
-                            <TextBlock FontSize="18" Text="Admin"></TextBlock>
-                            </Border>
-                            <Border Padding="25">
-                                <TextBlock FontSize="18" Text="Doktor"></TextBlock>
-                            </Border>
-                            <Border Padding="25">
-                                <TextBlock FontSize="18" Text="Pacjent"></TextBlock>
-                            </Border>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
-                            <Border Padding="20">
-                                <RadioButton GroupName="UserRole" x:Name="Admin" Padding="10">
-                                <materialDesign:PackIcon  Kind="Terminal" Width="Auto" Height="Auto" HorizontalAlignment="Left"/>
-                            </RadioButton>
-                        </Border>
-                        
-                        <Border Padding="20">
-                            <RadioButton GroupName="UserRole" x:Name="Doctor" >
-                                <materialDesign:PackIcon  Kind="Doctor" Width="Auto" Height="Auto" HorizontalAlignment="Left"/>
-                            </RadioButton>
-                        </Border>
-
-                        <Border Padding="20">
-                                <RadioButton GroupName="UserRole" IsChecked="True" x:Name="Patient">
-                                <materialDesign:PackIcon  Kind="User" Width="Auto" Height="Auto" HorizontalAlignment="Left"/>
-                            </RadioButton>
-                        </Border>
-
-                        </StackPanel>
-
-                        <Button Content="Dalej" HorizontalAlignment="Center" Click="Continue_Click" />
-
-                    </StackPanel>
-
-                </Border>
-            </StackPanel>
         </Grid>
-    </Border>
+    </Grid>
 </Page>

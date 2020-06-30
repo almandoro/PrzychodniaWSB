@@ -27,9 +27,9 @@ namespace PrzychodniaWSB.Views {
 
         private void Button_Click(object sender, RoutedEventArgs e) {
 
-            if(!string.IsNullOrEmpty(LoginTextBox.Text) && !string.IsNullOrEmpty(PasswordTextBox.Text)) {
+            if(!string.IsNullOrEmpty(LoginTextBox.Text) && !string.IsNullOrEmpty(PasswordTextBox.Password)) {
                 var loginVM = new LoginViewModel();
-                var isValidLogin = loginVM.performLogin(LoginTextBox.Text, PasswordTextBox.Text);
+                var isValidLogin = loginVM.performLogin(LoginTextBox.Text, PasswordTextBox.Password);
 
                 if(isValidLogin) {
                     //
@@ -39,7 +39,7 @@ namespace PrzychodniaWSB.Views {
                 MessageBox.Show("Proszę podać login i hasło!");
                 Logger.error("Nie podano loginu lub hasla!");
             }
-            Logger.debug($"Login: [{LoginTextBox.Text}] Hasło: [{PasswordTextBox.Text}]");
+            Logger.debug($"Login: [{LoginTextBox.Text}] Hasło: [{PasswordTextBox.Password}]");
 
         }
     }

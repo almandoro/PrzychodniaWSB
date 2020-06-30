@@ -8,6 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:viewmodels="clr-namespace:PrzychodniaWSB.ViewModels"
         xmlns:view="clr-namespace:PrzychodniaWSB.Views"
+        AllowsTransparency="True"
         Title="Przychodnia WSB" Height="600" Width="1000" Foreground="#FF016474" WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0" SpreadMethod="Reflect">
@@ -21,33 +22,44 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
-                        <Grid>
-                            <Grid x:Name="TitleBar" VerticalAlignment="Top" Background="#FF673AB7">
-                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Text="P R Z Y C H O D N I A" Foreground="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
-                                <StackPanel x:Name ="ControlButtons" Orientation="Horizontal" VerticalAlignment="Top" Height="40" HorizontalAlignment="Right">
-                                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="35" Height="Auto" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="SettingsButton_Click">
+                        <Grid x:Name="MainGrid">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="77*"/>
+                                <RowDefinition Height="523*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid x:Name="TitleBar" VerticalAlignment="Stretch" Grid.Row="0" Background="White">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="78*"/>
+                                    <ColumnDefinition Width="87*"/>
+                                    <ColumnDefinition Width="335*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="53*"/>
+                                    <RowDefinition Height="24*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Background="#FF0044C2"/>
+                                <Image Grid.Column="1" Grid.RowSpan="2" Source="medical_care.png" OpacityMask="{x:Null}"/>
+                                <TextBlock Grid.Column="2" Background="#FF0044C2"/>
+                                <StackPanel x:Name ="ControlButtons" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2" Background="#FF0044C2" Width="80">
+                                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="SettingsButton_Click">
                                         <Button.Effect>
                                             <DropShadowEffect BlurRadius="10" Opacity="1"></DropShadowEffect>
                                         </Button.Effect>
-                                        <materialDesign:PackIcon Kind="Settings"/>
+                                        <materialDesign:PackIcon Kind="Settings" MinWidth="30" MinHeight="30"/>
                                     </Button>
-                                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="30" Height="Auto" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="ExitButton_Click">
+                                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="ExitButton_Click">
                                         <Button.Effect>
                                             <DropShadowEffect BlurRadius="10" Opacity="1">
 
                                             </DropShadowEffect>
                                         </Button.Effect>
-                                        <materialDesign:PackIcon Kind="Power"/>
+                                        <materialDesign:PackIcon Kind="Power" MinWidth="30" MinHeight="30"/>
                                     </Button>
                                 </StackPanel>
                             </Grid>
-                            <Grid x:Name="MainScreen" VerticalAlignment="Stretch" Margin="0,40,0,26">
-                                <ContentPresenter  Content="{TemplateBinding Content}"/>
-                            </Grid>
-                            <Grid x:Name = "Bottom" VerticalAlignment="Bottom" Height="26">
-
-                                <Button IsEnabled="False" Height="Auto" Margin="0,0,0,0">Stopka Do zrobienia</Button>
-                            </Grid>
+                            
+                            <ContentPresenter Grid.Row="1" x:Name="MainContent" Content="{TemplateBinding Content}"/>
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
@@ -55,7 +67,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid Background="FloralWhite">
+    <Grid Background="White">
         <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ViewPageConverter}}" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

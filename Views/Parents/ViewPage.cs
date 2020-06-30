@@ -13,6 +13,6 @@ namespace PrzychodniaWSB.ViewModels.Parents {
         Login,
         AdminHome,
         DoctorHome,
-        UserHome,
+        UserHome
     }
 }

@@ -20,15 +20,19 @@ namespace PrzychodniaWSB.Views {
     /// Logika interakcji dla klasy PreLoginView.xaml
     /// </summary>
     public partial class PreLoginView : Page {
+
+        private Button activatedButton;
+        private Ellipse activatedElipse;
+
         public PreLoginView() {
+            Button activatedButton = (Button)FindName("PatientButton");
+            Ellipse activatedElipse = (Ellipse)FindName("PatientSelected");
             InitializeComponent();
         }
 
         private void Continue_Click(object sender, RoutedEventArgs e) {
-            var x = WindowViewModel.Instance.Equals(null);
-            Logger.debug($"x");
-
-            WindowViewModel.Instance.SwitchView(ViewPage.Login, new LoginViewModel());
+            
+        WindowViewModel.Instance.SwitchView(ViewPage.Login, new LoginViewModel());
         }
     }
 }
