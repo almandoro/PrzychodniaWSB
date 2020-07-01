@@ -43,13 +43,18 @@ namespace PrzychodniaWSB{
         /// </summary>
         public double MIN_HEIGHT { get; set; } = 800;
 
+
+        /// <summary>
+        /// Zmiana aktualnie wyświetlanej strony
+        /// </summary>
+        /// <param name="page"></param> View do zmiany
+        /// <param name="viewModel"></param> ViewModel, jeśli jakikolwiek należy do View. Defaultowo null
         #endregion
         public void SwitchView(ViewPage page, ViewModel viewModel = null) {
             
             CurrentPageViewModel = viewModel;
 
             var different = CurrentPage != page;
-
             CurrentPage = page;
 
             if(!different)

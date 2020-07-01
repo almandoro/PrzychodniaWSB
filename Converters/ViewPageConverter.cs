@@ -1,4 +1,5 @@
 ﻿using PrzychodniaWSB.Converters;
+using PrzychodniaWSB.Core.Clinic.Entity;
 using PrzychodniaWSB.Utils;
 using PrzychodniaWSB.ViewModels.Parents;
 using PrzychodniaWSB.Views;
@@ -24,16 +25,34 @@ namespace PrzychodniaWSB {
            
             switch((ViewPage) value) {
 
-                case ViewPage.Login:
-                    Logger.debug("Pokazuje LoginView");
-                    return new LoginView();
+                case ViewPage.PatientHome:
+                    return new PatientHome();
+
+                case ViewPage.DoctorHome:
+                    return new DoctorHome();
+
+                case ViewPage.AdminHome:
+                    return new AdminHome();
 
                 case ViewPage.PreLogin:
-                    Logger.debug("Pokazuje PreLoginView");
                     return new PreLoginView();
 
+                case ViewPage.PatientLogin:
+                    return new PatientLoginView();
+
+                case ViewPage.AdminLogin:
+                    return new AdminLoginView();
+
+                case ViewPage.DoctorLogin:
+                    return new DoctorLoginView();
+
+                case ViewPage.PatientChoose:
+                    return new PatientChooseView();
+
+                case ViewPage.Register:
+                    return new RegisterView();
+
                 default:
-                    Logger.error("Strona nieznana!");
                     return null;
             }
         }

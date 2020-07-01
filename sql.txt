@@ -27,3 +27,32 @@ CREATE TABLE [users] (
 );
 
 
+-- Script Date: 30.06.2020 21:15  - ErikEJ.SqlCeScripting version 3.5.2.86
+CREATE TABLE [patients] (
+  [patient_id] INTEGER NOT NULL
+, [user_id] INTEGER NOT NULL
+, [name] TEXT NOT NULL
+, [lastname] TEXT NOT NULL
+, [age] INTEGER NOT NULL
+, [sex] TEXT NOT NULL
+, [email] TEXT NOT NULL
+, [phone] NUMERIC NOT NULL
+, CONSTRAINT [PK_patients] PRIMARY KEY ([patient_id])
+);
+
+
+DROP TABLE [visits];
+CREATE TABLE [visits] (
+  [visit_id] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+, [patient_id] bigint NOT NULL
+, [doctor_id] bigint NOT NULL
+, [date] text NOT NULL
+, [disease] text NOT NULL
+);
+
+
+CREATE TABLE [admins] (
+  [admin_id] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  [user_id] INTEGER NOT NULL,
+  [name] text NOT NULL
+);

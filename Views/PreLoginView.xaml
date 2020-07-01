@@ -9,7 +9,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PreLoginView">
     <Grid x:Name="PreLoginGrid" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Image Grid.Column="1" Grid.RowSpan="2" Source="wybor_konta.png" OpacityMask="{x:Null}"/>
+        <Image Grid.Column="1" Grid.RowSpan="2" Source="/grafika/wybor_konta.png" OpacityMask="{x:Null}"/>
         <Grid x:Name="PreLoginImageGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="41*"/>
@@ -37,14 +37,17 @@
                 <RowDefinition Height="33*"/>
                 <RowDefinition Height="24*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="AdminButton" Grid.Column="1" Grid.Row="1" Background="#00000000" Height="Auto" BorderBrush="Transparent" Grid.RowSpan="3" Grid.ColumnSpan="3" />
-            <Ellipse x:Name="AdminSelected" Grid.Column="2" Grid.Row="2" Fill="Transparent"></Ellipse>
 
-            <Button x:Name="DoctorButton" Grid.Column="6" Grid.Row="1" Background="#00000000" Height="Auto" BorderBrush="Transparent" Grid.RowSpan="3" Grid.ColumnSpan="3" />
-            <Ellipse x:Name="DoctorSelected" Grid.Column="7" Grid.Row="2" Fill="Transparent"></Ellipse>
+            <Button x:Name="AdminButton" Grid.Column="1" Grid.Row="1" Background="#00000000" Height="Auto" BorderBrush="Transparent" Grid.RowSpan="3" Grid.ColumnSpan="3" Click="ChangeUser_Click"/>
+            <Ellipse Tag="AdminButton" x:Name="AdminSelected" Grid.Column="2" Grid.Row="2" Fill="#FF6532C1" Visibility="Collapsed"/>
 
-            <Button x:Name="PatientButton" Grid.Column="11" Grid.Row="1" Background="#00000000" Height="Auto" BorderBrush="#FF6532C1" Grid.RowSpan="3" Grid.ColumnSpan="3" />
-            <Ellipse x:Name="PatientSelected" Grid.Column="12" Grid.Row="2" Fill="#FF0145C2"></Ellipse>
+            <Button x:Name="DoctorButton" Grid.Column="6" Grid.Row="1" Background="#00000000" Height="Auto" BorderBrush="Transparent" Grid.RowSpan="3" Grid.ColumnSpan="3" Click="ChangeUser_Click" />
+            <Ellipse Tag="DoctorButton" x:Name="DoctorSelected" Grid.Column="7" Grid.Row="2" Fill="#FF6532C1" Visibility="Collapsed"/>
+
+            <Button x:Name="PatientButton" Grid.Column="11" Grid.Row="1" Background="#00000000" Height="Auto" BorderBrush="#FF6532C1" Grid.RowSpan="3" Grid.ColumnSpan="3" Click="ChangeUser_Click"/>
+            <Ellipse Tag="PatientButton" x:Name="PatientSelected" Grid.Column="12" Grid.Row="2" Fill="#FF6532C1" Visibility="Visible"/>
+
+            <Button x:Name="Continue" Grid.Column="5" Grid.Row="5" Background="#00000000" Click="Continue_Click" Grid.ColumnSpan="5"/>
 
         </Grid>
     </Grid>

@@ -5,12 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PrzychodniaWSB.Models {
-    class UserModel {
 
+    public class UserModel {
+
+        public int user_id { get; set; }
         public string login { get; set; }
-
         public string password { get; set; }
+        public UserRole role { get; set; }
 
+        public UserModel() {
 
+        }
     }
 }

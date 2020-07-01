@@ -39,7 +39,7 @@
                                     <RowDefinition Height="24*"/>
                                 </Grid.RowDefinitions>
                                 <TextBlock Grid.Row="0" Grid.Column="0" Background="#FF0044C2"/>
-                                <Image Grid.Column="1" Grid.RowSpan="2" Source="medical_care.png" OpacityMask="{x:Null}"/>
+                                <Image Grid.Column="1" Grid.RowSpan="2" Source="/grafika/medical_care.png" OpacityMask="{x:Null}"/>
                                 <TextBlock Grid.Column="2" Background="#FF0044C2"/>
                                 <StackPanel x:Name ="ControlButtons" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2" Background="#FF0044C2" Width="80">
                                     <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="SettingsButton_Click">

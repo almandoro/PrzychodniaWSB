@@ -195,24 +195,75 @@
     <Compile Include="ClinicCore\Entity\Doctor.cs" />
     <Compile Include="ClinicCore\Entity\Patient.cs" />
     <Compile Include="ClinicCore\AppSettings.cs" />
+    <Compile Include="ClinicCore\Utils\EmailSender.cs" />
+    <Compile Include="ClinicCore\Utils\LoginGenerator.cs" />
+    <Compile Include="ClinicCore\Utils\Popup.cs" />
+    <Compile Include="ClinicCore\Utils\UserCache.cs" />
     <Compile Include="Converters\Parents\AbstractConverter.cs" />
     <Compile Include="Converters\ViewPageConverter.cs" />
+    <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\DoctorModel.cs" />
+    <Compile Include="Models\PatientModel.cs" />
+    <Compile Include="Models\PatientQue.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\UsersEnum.cs" />
     <Compile Include="ClinicCore\Utils\Logger.cs" />
+    <Compile Include="ViewModels\AdminHomeViewModel.cs" />
+    <Compile Include="ViewModels\DoctorHomeViewModel.cs" />
     <Compile Include="ViewModels\Parents\CommandExecutor.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\Parents\ViewModel.cs" />
+    <Compile Include="ViewModels\PatientHomeViewModel.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="Views\AdminHome.xaml.cs">
+      <DependentUpon>AdminHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminLoginView.xaml.cs">
+      <DependentUpon>AdminLoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DoctorHome.xaml.cs">
+      <DependentUpon>DoctorHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DoctorLoginView.xaml.cs">
+      <DependentUpon>DoctorLoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error.xaml.cs">
+      <DependentUpon>Error.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientHome.xaml.cs">
+      <DependentUpon>PatientHome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PatientLoginView.xaml.cs">
+      <DependentUpon>PatientLoginView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Parents\ViewPage.cs" />
     <Compile Include="ViewModels\WindowViewModel.cs" />
-    <Compile Include="Views\LoginView.xaml.cs">
-      <DependentUpon>LoginView.xaml</DependentUpon>
+    <Compile Include="Views\PatientChooseView.xaml.cs">
+      <DependentUpon>PatientChooseView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PreLoginView.xaml.cs">
       <DependentUpon>PreLoginView.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\LoginView.xaml">
+    <Compile Include="Views\RegisterView.xaml.cs">
+      <DependentUpon>RegisterView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\AdminHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdminLoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DoctorHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DoctorLoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Error.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -228,7 +279,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\PatientHome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PatientLoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PatientChooseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PreLoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegisterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -271,18 +338,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="grafika\logo.png" />
-    <Resource Include="grafika\logowanie_admin.png" />
-    <Resource Include="grafika\logowanie_lekarz.png" />
-    <Resource Include="grafika\logowanie_pacjent.png" />
     <Resource Include="grafika\logowanie_rejestracja.png" />
     <Resource Include="grafika\rejestracja_pacjenta.png" />
     <Resource Include="grafika\wybor_konta.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\medical_care.png" />
+    <Resource Include="grafika\medical_care.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\wybor_konta.png" />
+    <Resource Include="grafika\login_admin.png" />
+    <Resource Include="grafika\login_lekarz.png" />
+    <Resource Include="grafika\login_pacjent.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.3.1.3\build\MaterialDesignThemes.targets')" />
